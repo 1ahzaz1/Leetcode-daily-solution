@@ -10,21 +10,20 @@ class Solution:
         frequency2 = {}
 
         #filling each char and its frequency in its respective set
-        for i in word1:
-            if i not in frequency1:
-                frequency1[i]=1
+        for char in word1:
+            if char not in frequency1:
+                frequency1[char]=1
             else:
-                frequency1[i] +=1
+                frequency1[char] +=1
 
-        for j in word2:
-            if j not in frequency1:
-                return False           #character in word2 didnt appear in word2
-            if j not in frequency2:
-                frequency2[j] = 1
+        for char in word2:
+            if char not in frequency1:
+                return False           #character in word2 didnt appear in word1
+            if char not in frequency2:
+                frequency2[char] = 1
             else:
-                frequency2[j] +=1
+                frequency2[char] +=1
 
         return sorted(frequency1.values()) == sorted(frequency2.values())  #sorting is O(logn) but always max 26 length
 
         #Therefore solution is O(n) or O(n+m)for large inputs, as sets have max length 26
-        
