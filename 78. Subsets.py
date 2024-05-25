@@ -8,7 +8,7 @@ class Solution:
         #At each point we branch out into a new possible subset that can be made
         #This is done by having 2 options at each index;
         #The subset INCLUDES nums[i] or it does NOT INCLUDE nums[i]
-        #At each index we have *2 possible routes. Until final index where we have 2^len(nums) routes
+        #At each index we have *2 possible routes, until final index where we have 2^len(nums) routes
 
         output = []
         subset = []
@@ -26,3 +26,4 @@ class Solution:
 
         dfs(0)
         return output
+        
