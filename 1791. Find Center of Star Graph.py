@@ -11,6 +11,6 @@ class Solution:
             if x1!=x and x1!=y:
                 x1True = False
 
-        #if x1 did not appear in both nodes at any edge, then x2 was the centre
+        #if x1 did not appear in both nodes of any edge, then x2 was the centre
         return x1 if x1True else x2
 
