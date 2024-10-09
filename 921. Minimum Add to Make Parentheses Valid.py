@@ -1,12 +1,18 @@
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
+
+        #SOLUTION WITHOUT STACK. BETTER RUNTIME
         
-        stack = []
+        opens = 0 #Stores how many opening brackets need closing ones
+        closes = 0 #Stores how many closing brackets need opening ones
+
 
         for char in s:
-            if char == ')' and stack and stack[-1] == '(': #valid pair of brackets found
-                stack.pop()
-            else: #We have seen an opening bracket that may later be popped. or we have an invalid closing bracket
-                stack.append(char)
-
-        return len(stack) #stack will have all the leftovers that were never validly paired
+            if char == '(': #open bracket seen
+                opens += 1
+            else: #Close bracket seen
+                if opens: #If there are previous opens to match this close with
+                    opens -= 1
+                else:
+                    closes += 1 #Closing bracket seen with no open before to pair with
+        return opens + closes 
