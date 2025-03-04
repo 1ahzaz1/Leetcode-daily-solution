@@ -1,13 +1,12 @@
 class Solution:
     def checkPowersOfThree(self, n: int) -> bool:
         
-        # If the number has a 2 in its ternary representation, it cant be a sum of powers of 3
-
-        # 91 = 10101 base 3 -> return true
-        # 46 = 1201 base 3 -> return false due to the 2
-
-        while n!=0:
-            if n%3 == 2:
-                return False
-            n = n//3
-        return True
+        # n must be < 3^16, as defined in input constraints
+        start = 16
+        total = 0
+        # keep summing the largest powers of 3 smaller than n
+        while start>=0:
+            if total + 3**start <= n:
+                total += 3**start
+            start -=1
+        return total == n
