@@ -32,7 +32,7 @@ jobs:
 
       - name: Commit & push if changed
         env:
-          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_NAME: 1ahzaz1
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           TZ: Europe/London 
         run: |
