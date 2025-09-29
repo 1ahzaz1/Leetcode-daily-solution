@@ -58,7 +58,7 @@ def main():
         return
 
     # Default placeholder
-    path.write_text("File added, please replace this with the complete solution.\n", encoding="utf-8")
+    path.write_text("#File added, please replace this with the complete solution.\n", encoding="utf-8")
 
     print(json.dumps({"created": filename}, indent=2))
 
